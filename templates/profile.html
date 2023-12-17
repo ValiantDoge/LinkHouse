@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block header %}
+    <div class="flex justify-items-center justify-center bg-bg-color">
+        {% if profile.logo %}
+            <img src="{{profile.logo.url}}" class="h-36 m-5" alt="{{profile.slug}}-logo">
+        {% else %}
+            <img src="{% static 'images/logo-lh.svg' %}" class="w-28 h-36" alt="linkhouselogo">
+        {% endif %}
+        
+    </div>
+{% endblock header %}
+
+{% block Content %}
+<div class="flex justify-items-center justify-center">
+    <h2 class="text-5xl font-Barlow mt-10 text-center">{{profile.name}}</h2>
+</div>
+    {% for link in profile.link_set.all %}
+    <a href="{{link.url}}">
+        <div class="flex justify-items-center h-36 justify-center rounded-lg m-10 border-2 border-amber-500 bg-opacity-60" 
+        {% if link.linktype == "1" %}
+            style="background-image: url('/static/images/bar_back.jpg'); background-size: cover; background-position: 80%;"
+        {% elif link.linktype == "2" %}
+            style="background-image: url('/static/images/food_back.jpg'); background-size: cover; background-position: 80%;"
+        {% endif %}
+        >
+            
+            <h3 class="font-Lora text-4xl text-white m-10">{{link.title}}</h3>
+        </div>
+    </a>
+    {% endfor %}
+{% endblock Content %}

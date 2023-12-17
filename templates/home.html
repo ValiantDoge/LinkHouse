@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% comment %} {% block header %}
+    
+{% endblock header %} {% endcomment %}
+
+{% block Content %}
+
+    {% for pro in profiles %}
+    <a href="{% url 'profile' pro.slug %}">
+        <div class="flex justify-center m-10 border-2 border-black rounded-lg">
+            {% if pro.logo %}
+                <img src="{{pro.logo.url}}" class="m-10" alt="{{pro.slug}}-logo">
+            {% else %}
+                <img src="{% static 'images/logo-lh.svg' %}" class="m-10" alt="linkhouselogo">
+            {% endif %}
+        </div>
+    </a>
+        
+    {% endfor %}
+
+{% endblock Content %}

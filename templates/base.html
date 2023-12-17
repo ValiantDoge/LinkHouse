@@ -1,0 +1,27 @@
+{% load static %}
+<html>
+    <head>
+        <title>{% block title %}LinkHouse {% endblock title%}</title>
+
+        <link rel="stylesheet" href="{% static 'css/output.css' %}">
+    </head>
+    {% block header %}
+
+        <div class="flex justify-items-center justify-center bg-bg-color">
+            <img src="{% static 'images/logo-lh.svg' %}" class="w-28 h-36" alt="linkhouselogo">
+        </div>
+
+    {% endblock header %}
+    <header>
+
+    </header>
+    <main class="h-screen bg-bg-color">
+        {% block Content %}
+            
+            <h1>Somthing went wrong!</h1>
+            
+        {% endblock Content %}
+    </main>
+</html>
+
+
