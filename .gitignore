@@ -147,4 +147,3 @@ GitHub.sublime-settings
 migrations/
 db.sqlite3
 .vercel
-.env
