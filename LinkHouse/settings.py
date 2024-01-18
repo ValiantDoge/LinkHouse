@@ -71,7 +71,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'LinkHouse.wsgi.application'
+WSGI_APPLICATION = 'LinkHouse.wsgi.app'
 
 
 # Database
