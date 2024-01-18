@@ -143,7 +143,9 @@ GitHub.sublime-settings
 .history
 
 # Database stuff
-*.sqlite3
-migrations/
-db.sqlite3
-.vercel
+# *.sqlite3
+# migrations/
+# db.sqlite3
+# .vercel
+
+.env
