@@ -5,7 +5,7 @@ from django.template.defaultfilters import slugify
 class Profile(models.Model):
     name = models.TextField()
     logo = models.ImageField(upload_to='profile/logo/', blank=True,null=True)
-    slug = models.SlugField(unique=True, null=True)
+    slug = models.SlugField(unique=True, null=True, blank=True)
 
     def __str__(self):
         return self.name
